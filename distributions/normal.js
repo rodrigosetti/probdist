@@ -1,6 +1,5 @@
 
 var distribution = require('../helpers/distribution');
-var constants = require('../helpers/constants');
 
 module.exports = function(mean, stddev) {
   if (mean === undefined) {
@@ -12,7 +11,7 @@ module.exports = function(mean, stddev) {
 
   return distribution({
     pdf: function(x) {
-      return (1 / (stddev * Math.sqrt(constants.two_pi))) *
+      return (1 / (stddev * Math.sqrt(2 * Math.PI))) *
              Math.exp(- Math.pow(x - mean, 2) / (2 * Math.pow(stddev, 2)));
     }
   });

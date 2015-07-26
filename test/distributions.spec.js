@@ -96,4 +96,11 @@ describe('Distributions', function() {
     assert.ok( Math.abs(counts.c / sample.length - .2) < .01 );
     assert.ok( Math.abs(counts.d / sample.length - .2) < .01 );
   });
+
+  it('Chi-Squared distribution', function () {
+    var distribution = distributions.chisquare(2);
+    var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'chisquare_2'));
+  });
 });

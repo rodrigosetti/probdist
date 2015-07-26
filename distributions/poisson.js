@@ -1,6 +1,5 @@
 
 var factorial = require('../helpers/factorial');
-var constants = require('../helpers/constants');
 var distribution = require('../helpers/distribution');
 var uniform = require('./uniform');
 
@@ -17,7 +16,7 @@ function knuthPoissonSample(lambda) {
     while (true) {
       k ++;
       p *= uvar.sample(1)[0];
-      if (p < constants.e && lambdaLeft > 0) {
+      if (p < Math.exp(1) && lambdaLeft > 0) {
         if (lambdaLeft > STEP) {
           p *= e_STEP;
           lambdaLeft -= STEP;

@@ -1,6 +1,4 @@
 
-var constants = require('./constants');
-
 function productFactorial(n) {
   var r = 1;
   for (var i=1; i <= n; i++) {
@@ -10,8 +8,8 @@ function productFactorial(n) {
 }
 
 function stirlingApproximation(n) {
-  return Math.round(Math.sqrt(constants.two_pi * n) *
-                    Math.pow(n / constants.e, n));
+  return Math.round(Math.sqrt(2 * Math.PI * n) *
+                    Math.pow(n / Math.exp(1), n));
 }
 
 module.exports = function (n) {
