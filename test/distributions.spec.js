@@ -41,6 +41,18 @@ function isDrawnFromDistribution(sample, name) {
   return !kolmogorovSmirnovTest(sample, y);
 }
 
+function categoryCount(sample) {
+  var counts = {};
+  for (var i=0; i < sample.length; i++) {
+    var x = sample[i];
+    if (counts[x] === undefined) {
+      counts[x] = 0;
+    }
+    counts[x] ++;
+  }
+  return counts;
+}
+
 describe('Distributions', function() {
 
   it('Uniform distribution', function () {
@@ -63,5 +75,25 @@ describe('Distributions', function() {
     var sample = distribution.sample(100);
 
     assert.ok(isDrawnFromDistribution(sample, 'poisson_3'));
+  });
+
+  it('Bernoulli distribution', function () {
+    var distribution = distributions.bernoulli(.8);
+    var sample = distribution.sample(10000);
+    var counts = categoryCount(sample);
+
+    assert.ok( Math.abs(counts[0] / sample.length - .2) < .01 );
+    assert.ok( Math.abs(counts[1] / sample.length - .8) < .01 );
+  });
+
+  it('Categorical distribution', function () {
+    var distribution = distributions.categorical({ a: .1, b: .5, c: .2, d: .2});
+    var sample = distribution.sample(10000);
+    var counts = categoryCount(sample);
+
+    assert.ok( Math.abs(counts.a / sample.length - .1) < .01 );
+    assert.ok( Math.abs(counts.b / sample.length - .5) < .01 );
+    assert.ok( Math.abs(counts.c / sample.length - .2) < .01 );
+    assert.ok( Math.abs(counts.d / sample.length - .2) < .01 );
   });
 });

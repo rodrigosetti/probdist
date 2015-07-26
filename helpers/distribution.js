@@ -35,14 +35,15 @@ function finiteDiscreteSample(pdf) {
     for (var i = 0; i < n; i++) {
       var x = uvar.sample(1)[0];
       var accum = 0;
-      for (var j = 0; j < pdf.length; j++) {
-        var prob = pdf[j][0];
-        var value = pdf[j][1];
-        accum += prob;
+      for (var value in pdf) {
+        if (pdf.hasOwnProperty(value)) {
+          var prob = pdf[value];
+          accum += prob;
 
-        if (accum >= x) {
-          result.push(value);
-          break;
+          if (accum >= x) {
+            result.push(value);
+            break;
+          }
         }
       }
     }

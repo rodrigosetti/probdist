@@ -1,7 +1,6 @@
 
 var distribution = require('../helpers/distribution');
-
-var TWO_PI = 6.28318530718;
+var constants = require('../helpers/constants');
 
 module.exports = function(mean, stddev) {
   if (mean === undefined) {
@@ -13,7 +12,7 @@ module.exports = function(mean, stddev) {
 
   return distribution({
     pdf: function(x) {
-      return (1 / (stddev * Math.sqrt(TWO_PI))) *
+      return (1 / (stddev * Math.sqrt(constants.two_pi))) *
              Math.exp(- Math.pow(x - mean, 2) / (2 * Math.pow(stddev, 2)));
     }
   });
