@@ -63,8 +63,8 @@ describe('Distributions', function() {
     assert.ok(isDrawnFromDistribution(sample, 'uniform_-2_20'));
   });
 
-  it('Normal distribution', function () {
-    var distribution = distributions.normal(1, 4);
+  it('Gaussian distribution', function () {
+    var distribution = distributions.gaussian(1, 4);
     var sample = distribution.sample(100);
 
     assert.ok(isDrawnFromDistribution(sample, 'normal_1_4'));

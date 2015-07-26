@@ -2,7 +2,7 @@
 module.exports = {
   uniform : require('./uniform'),
   bernoulli : require('./bernoulli'),
-  normal : require('./normal'),
+  gaussian : require('./gaussian'),
   categorical : require('./categorical'),
   poisson : require('./poisson'),
   chisquare : require('./chisquare'),
