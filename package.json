@@ -1,0 +1,27 @@
+{
+  "name": "distributions",
+  "version": "0.1.0",
+  "description": "Random Distributions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigosetti/distributions.git"
+  },
+  "keywords": [
+    "random",
+    "math",
+    "distribution"
+  ],
+  "author": "Rodrigo Setti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodrigosetti/distributions/issues"
+  },
+  "homepage": "https://github.com/rodrigosetti/distributions#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
