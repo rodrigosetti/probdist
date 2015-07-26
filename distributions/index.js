@@ -6,4 +6,5 @@ module.exports = {
   categorical : require('./categorical'),
   poisson : require('./poisson'),
   chisquare : require('./chisquare'),
+  beta : require('./beta'),
 };

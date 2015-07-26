@@ -6,7 +6,7 @@ function lanczosApproximation(x){
 
 	var g = 7;
 	if(x < 0.5){
-		return Math.PI / (Math.sin(Math.PI * x) * gamma(1-x));
+		return Math.PI / (Math.sin(Math.PI * x) * lanczosApproximation(1-x));
 	}
 
 	x -= 1;

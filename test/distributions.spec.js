@@ -103,4 +103,11 @@ describe('Distributions', function() {
 
     assert.ok(isDrawnFromDistribution(sample, 'chisquare_2'));
   });
+
+  it('Beta distribution', function () {
+    var distribution = distributions.beta(2, 1);
+    var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'beta_2_1'));
+  });
 });
