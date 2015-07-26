@@ -1,5 +1,5 @@
 
-var distribution = require('./distribution');
+var distribution = require('../helpers/distribution');
 
 var TWO_PI = 6.28318530718;
 

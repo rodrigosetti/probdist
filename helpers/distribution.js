@@ -1,5 +1,5 @@
 
-var uniform = require('./uniform');
+var uniform = require('../distributions/uniform');
 
 var SAMPLE_MIN = -1000;
 var SAMPLE_MAX = 1000;

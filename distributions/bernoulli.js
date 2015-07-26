@@ -1,5 +1,5 @@
 
-var distribution = require('./distribution');
+var distribution = require('../helpers/distribution');
 
 module.exports = function(p) {
   return distribution({

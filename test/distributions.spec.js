@@ -57,4 +57,11 @@ describe('Distributions', function() {
 
     assert.ok(isDrawnFromDistribution(sample, 'normal_1_4'));
   });
+
+  it('Poisson distribution', function () {
+    var distribution = distributions.poisson(3);
+    var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'poisson_3'));
+  });
 });
