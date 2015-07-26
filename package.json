@@ -23,5 +23,8 @@
   "homepage": "https://github.com/rodrigosetti/distributions#readme",
   "devDependencies": {
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "mersennetwister": "^0.2.1"
   }
 }
