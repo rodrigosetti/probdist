@@ -131,4 +131,16 @@ describe('Distributions', function() {
 
       assert.ok(isDrawnFromDistribution(sample, 'rayleigh_1'));
   });
+
+  it("Student's T distribution", function () {
+      var distribution = distributions.t(.5);
+      var sample = distribution.sample(100);
+
+      assert.ok(isDrawnFromDistribution(sample, 't_.5'));
+
+      distribution = distributions.t(7);
+      sample = distribution.sample(100);
+
+      assert.ok(isDrawnFromDistribution(sample, 't_7'));
+  });
 });

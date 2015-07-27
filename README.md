@@ -16,6 +16,7 @@ The following distributions are implemented:
  * Pareto
  * Gamma
  * Rayleigh
+ * Student's T
 
 Example of usage:
 

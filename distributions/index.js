@@ -10,4 +10,5 @@ module.exports = {
   pareto : require('./pareto'),
   gamma : require('./gamma'),
   rayleigh : require('./rayleigh'),
+  t : require('./t'),
 };
