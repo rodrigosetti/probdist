@@ -1,4 +1,4 @@
-# distributions
+# probdist
 
 [![Build Status](https://travis-ci.org/rodrigosetti/distributions.svg)](https://travis-ci.org/rodrigosetti/distributions)
 
