@@ -3,7 +3,7 @@ var distribution = require('../helpers/distribution');
 var beta = require('../helpers/beta');
 
 module.exports = function(nu) {
-  var beta_term = Math.sqrt(nu) * beta(nu / 2, .5);
+  var beta_term = Math.sqrt(nu) * beta(nu / 2, 0.5);
 
   return distribution({
     pdf: function(t) {

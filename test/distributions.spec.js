@@ -1,5 +1,5 @@
 
-var assert = require("assert")
+var assert = require("assert");
 var fs = require('fs');
 var distributions = require('../index.js');
 
@@ -78,23 +78,23 @@ describe('Distributions', function() {
   });
 
   it('Bernoulli distribution', function () {
-    var distribution = distributions.bernoulli(.8);
+    var distribution = distributions.bernoulli(0.8);
     var sample = distribution.sample(10000);
     var counts = categoryCount(sample);
 
-    assert.ok( Math.abs(counts[0] / sample.length - .2) < .01 );
-    assert.ok( Math.abs(counts[1] / sample.length - .8) < .01 );
+    assert.ok( Math.abs(counts[0] / sample.length - 0.2) < 0.01 );
+    assert.ok( Math.abs(counts[1] / sample.length - 0.8) < 0.01 );
   });
 
   it('Categorical distribution', function () {
-    var distribution = distributions.categorical({ a: .1, b: .5, c: .2, d: .2});
+    var distribution = distributions.categorical({ a: 0.1, b: 0.5, c: 0.2, d: 0.2});
     var sample = distribution.sample(10000);
     var counts = categoryCount(sample);
 
-    assert.ok( Math.abs(counts.a / sample.length - .1) < .01 );
-    assert.ok( Math.abs(counts.b / sample.length - .5) < .01 );
-    assert.ok( Math.abs(counts.c / sample.length - .2) < .01 );
-    assert.ok( Math.abs(counts.d / sample.length - .2) < .01 );
+    assert.ok( Math.abs(counts.a / sample.length - 0.1) < 0.01 );
+    assert.ok( Math.abs(counts.b / sample.length - 0.5) < 0.01 );
+    assert.ok( Math.abs(counts.c / sample.length - 0.2) < 0.01 );
+    assert.ok( Math.abs(counts.d / sample.length - 0.2) < 0.01 );
   });
 
   it('Chi-Squared distribution', function () {
@@ -112,7 +112,7 @@ describe('Distributions', function() {
   });
 
   it('Pareto distribution', function () {
-      var distribution = distributions.pareto(3, .75);
+      var distribution = distributions.pareto(3, 0.75);
       var sample = distribution.sample(100);
 
       assert.ok(isDrawnFromDistribution(sample, 'pareto_3_.75'));
@@ -133,7 +133,7 @@ describe('Distributions', function() {
   });
 
   it("Student's T distribution", function () {
-      var distribution = distributions.t(.5);
+      var distribution = distributions.t(0.5);
       var sample = distribution.sample(100);
 
       assert.ok(isDrawnFromDistribution(sample, 't_.5'));
