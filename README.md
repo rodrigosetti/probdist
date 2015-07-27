@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rodrigosetti/distributions.svg)](https://travis-ci.org/rodrigosetti/distributions)
 
-![NPM](https://nodei.co/npm/probdist.png)](https://npmjs.org/package/probdist)
+[![NPM](https://nodei.co/npm/probdist.png)](https://npmjs.org/package/probdist)
 
 Probability Distributions implementations in Javascript.
 
