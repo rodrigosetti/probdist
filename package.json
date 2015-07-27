@@ -1,7 +1,7 @@
 {
   "name": "distributions",
   "version": "0.1.0",
-  "description": "Random Distributions",
+  "description": "Probability Distributions",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "random",
+    "statistics",
+    "probability",
     "math",
     "distribution"
   ],
