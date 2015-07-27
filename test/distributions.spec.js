@@ -116,5 +116,12 @@ describe('Distributions', function() {
       var sample = distribution.sample(100);
 
       assert.ok(isDrawnFromDistribution(sample, 'pareto_3_.75'));
-    });
+  });
+
+  it('Gamma distribution', function () {
+      var distribution = distributions.gamma(4, 2);
+      var sample = distribution.sample(100);
+
+      assert.ok(isDrawnFromDistribution(sample, 'gamma_4_2'));
+  });
 });

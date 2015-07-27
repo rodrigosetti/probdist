@@ -8,4 +8,5 @@ module.exports = {
   chisquare : require('./chisquare'),
   beta : require('./beta'),
   pareto : require('./pareto'),
+  gamma : require('./gamma'),
 };

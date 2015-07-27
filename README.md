@@ -14,6 +14,7 @@ The following distributions are implemented:
  * Chi-squared
  * Beta
  * Pareto
+ * Gamma
 
 Example of usage:
 
