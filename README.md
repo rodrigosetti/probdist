@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/rodrigosetti/distributions.svg)](https://travis-ci.org/rodrigosetti/distributions)
 
+![NPM](https://nodei.co/npm/probdist.png)](https://npmjs.org/package/probdist)
+
 Probability Distributions implementations in Javascript.
 
 The following distributions are implemented:
@@ -21,7 +23,7 @@ The following distributions are implemented:
 Example of usage:
 
 ```javascript
-var distributions = require('distributions');
+var distributions = require('probdist');
 var X = distributions.gaussian(0, 1);
 
 X.sample(10);

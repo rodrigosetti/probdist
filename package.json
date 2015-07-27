@@ -1,5 +1,5 @@
 {
-  "name": "distributions",
+  "name": "probdist",
   "version": "0.1.0",
   "description": "Probability Distributions",
   "main": "index.js",
