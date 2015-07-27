@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodrigosetti/distributions.git"
+    "url": "git+https://github.com/rodrigosetti/probdist.git"
   },
   "keywords": [
     "random",
@@ -20,9 +20,9 @@
   "author": "Rodrigo Setti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rodrigosetti/distributions/issues"
+    "url": "https://github.com/rodrigosetti/probdist/issues"
   },
-  "homepage": "https://github.com/rodrigosetti/distributions#readme",
+  "homepage": "https://github.com/rodrigosetti/probdist#readme",
   "devDependencies": {
     "mocha": "^2.2.5"
   },
