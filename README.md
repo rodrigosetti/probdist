@@ -13,6 +13,7 @@ The following distributions are implemented:
  * Poisson
  * Chi-squared
  * Beta
+ * Pareto
 
 Example of usage:
 

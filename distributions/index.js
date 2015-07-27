@@ -7,4 +7,5 @@ module.exports = {
   poisson : require('./poisson'),
   chisquare : require('./chisquare'),
   beta : require('./beta'),
+  pareto : require('./pareto'),
 };

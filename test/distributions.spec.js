@@ -110,4 +110,11 @@ describe('Distributions', function() {
 
     assert.ok(isDrawnFromDistribution(sample, 'beta_2_1'));
   });
+
+  it('Pareto distribution', function () {
+      var distribution = distributions.pareto(3, .75);
+      var sample = distribution.sample(100);
+
+      assert.ok(isDrawnFromDistribution(sample, 'pareto_3_.75'));
+    });
 });
