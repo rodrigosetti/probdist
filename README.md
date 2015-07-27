@@ -15,6 +15,7 @@ The following distributions are implemented:
  * Beta
  * Pareto
  * Gamma
+ * Rayleigh
 
 Example of usage:
 

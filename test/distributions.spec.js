@@ -124,4 +124,11 @@ describe('Distributions', function() {
 
       assert.ok(isDrawnFromDistribution(sample, 'gamma_4_2'));
   });
+
+  it('Rayleigh distribution', function () {
+      var distribution = distributions.rayleigh(1);
+      var sample = distribution.sample(100);
+
+      assert.ok(isDrawnFromDistribution(sample, 'rayleigh_1'));
+  });
 });

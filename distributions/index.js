@@ -9,4 +9,5 @@ module.exports = {
   beta : require('./beta'),
   pareto : require('./pareto'),
   gamma : require('./gamma'),
+  rayleigh : require('./rayleigh'),
 };
