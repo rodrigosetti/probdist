@@ -4,7 +4,7 @@
   "description": "Probability Distributions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,11 @@
   },
   "homepage": "https://github.com/rodrigosetti/probdist#readme",
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "coveralls": "^2.11.3",
+    "istanbul": "^0.3.17",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
     "mersennetwister": "^0.2.1"
