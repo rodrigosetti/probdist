@@ -1,6 +1,6 @@
 # probdist
 
-[![Build Status](https://travis-ci.org/rodrigosetti/probdist.svg?branch=master)](https://travis-ci.org/rodrigosetti/probdist)
+[![Build Status](https://travis-ci.org/rodrigosetti/probdist.svg?branch=master)](https://travis-ci.org/rodrigosetti/probdist) [![Coverage Status](https://coveralls.io/repos/rodrigosetti/probdist/badge.svg?branch=master&service=github)](https://coveralls.io/github/rodrigosetti/probdist?branch=master)
 
 [![NPM](https://nodei.co/npm/probdist.png)](https://npmjs.org/package/probdist)
 
