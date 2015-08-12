@@ -9,7 +9,11 @@ Probability Distributions implementations in Javascript.
 The following distributions are implemented:
 
  * Uniform
+ * Discrete Uniform
  * Bernoulli
+ * Binomial
+ * Negative Binomial
+ * Geometric
  * Gaussian
  * Categorical
  * Poisson

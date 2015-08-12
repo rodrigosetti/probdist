@@ -23,6 +23,10 @@ module.exports = function (min, max) {
         result.push(min + (mt.rndHiRes() * interval));
       }
       return result;
-    }
+    },
+	
+	mean: (min + max) / 2,
+	
+	variance: Math.pow(max - min, 2) / 12
   };
 };

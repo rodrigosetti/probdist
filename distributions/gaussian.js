@@ -13,6 +13,10 @@ module.exports = function(mean, stddev) {
     pdf: function(x) {
       return (1 / (stddev * Math.sqrt(2 * Math.PI))) *
              Math.exp(- Math.pow(x - mean, 2) / (2 * Math.pow(stddev, 2)));
-    }
+    },
+	
+	mean: mean,
+	
+	variance: Math.pow(stddev, 2)
   });
 };

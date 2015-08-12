@@ -48,6 +48,10 @@ module.exports = function (lambda) {
         r.push(sampleOne());
       }
       return r;
-    }
+    },
+	
+	mean: lambda,
+	
+	variance: lambda
   });
 };

@@ -9,6 +9,10 @@ module.exports = function(alpha, beta) {
     pdf: function(x) {
       return x >= 0 && x <= 1 ?
              inv_beta * Math.pow(x, alpha-1) * Math.pow(1 - x, beta - 1) : 0;
-    }
+    },
+	
+	mean: alpha / (alpha + beta),
+	
+	variance: (alpha * beta) / (Math.pow(alpha + beta, 2) * (alpha + beta + 1))
   });
 };

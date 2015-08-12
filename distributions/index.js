@@ -1,7 +1,11 @@
 
 module.exports = {
   uniform : require('./uniform'),
+  discreteuniform: require('./discreteuniform'),
   bernoulli : require('./bernoulli'),
+  binomial: require('./binomial'),
+  negativebinomial: require('./negativebinomial'),
+  geometric: require('./geometric'),
   gaussian : require('./gaussian'),
   categorical : require('./categorical'),
   poisson : require('./poisson'),

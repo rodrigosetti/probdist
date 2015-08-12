@@ -10,6 +10,10 @@ module.exports = function(alpha, beta) {
       return x > 0 ?
             (Math.pow(beta, -alpha) * Math.pow(x, alpha-1) * Math.exp(-x / beta)) /
              gamma_alpha : 0;
-    }
+    },
+	
+	mean: alpha * beta,
+	
+	variance: alpha * Math.pow(beta, 2)
   });
 };
