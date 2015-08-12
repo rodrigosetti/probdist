@@ -254,4 +254,26 @@ describe('Distributions', function() {
 	  assert.equal(distribution.mean, 0);
 	  assert.equal(distribution.variance, 1.4);
   });
+  
+  it("Snedecor's F sample", function () {
+      var distribution = distributions.f(5, 5);
+      var sample = distribution.sample(100);
+	
+      assert.ok(isDrawnFromDistribution(sample, 'F_5_5'));
+	  assert.equal(distribution.mean.toFixed(2), 1.67);
+	  assert.equal(distribution.variance.toFixed(2), 8.89);
+  });
+  
+  it("Snedecor's F mean and variance", function () {
+	  var distribution = distributions.f(4, 3);
+	  
+	  assert.equal(distribution.mean, 3);
+	  assert.equal(distribution.variance, undefined);
+	  
+	  distribution = distributions.f(2, 1);
+	  
+	  assert.equal(distribution.mean, undefined);
+	  assert.equal(distribution.variance, undefined);
+  });
+  
 });

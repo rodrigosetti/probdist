@@ -57,7 +57,7 @@ module.exports = function(d) {
 
     if (!sample) {
       if (typeof(pdf) === 'function') {
-        sample = rejectionSample(d.pdf);
+        sample = rejectionSample(pdf);
       } else {
         sample = finiteDiscreteSample(pdf);
       }

@@ -23,6 +23,7 @@ The following distributions are implemented:
  * Gamma
  * Rayleigh
  * Student's T
+ * Snedecor's F
 
 Example of usage:
 
