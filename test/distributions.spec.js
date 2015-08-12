@@ -141,6 +141,24 @@ describe('Distributions', function() {
 	assert.equal(distribution.mean, 0);
 	assert.equal(distribution.variance, 1);
   });
+  
+  it('Cauchy sample', function () {
+	var distribution = distributions.cauchy(10, 12);
+	var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'cauchy_10_12'));
+	assert.equal(distribution.mean, undefined);
+	assert.equal(distribution.variance, undefined);
+  });
+  
+  it('Cauchy sample default', function () {
+	var distribution = distributions.cauchy();//should default to 0,1
+	var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'cauchy'));
+	assert.equal(distribution.mean, undefined);
+	assert.equal(distribution.variance, undefined);
+  });
 
   it('Poisson sample', function () {
     var distribution = distributions.poisson(3);

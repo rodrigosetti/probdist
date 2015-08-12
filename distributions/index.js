@@ -7,6 +7,7 @@ module.exports = {
   negativebinomial : require('./negativebinomial'),
   geometric : require('./geometric'),
   gaussian : require('./gaussian'),
+  cauchy : require('./cauchy'),
   categorical : require('./categorical'),
   poisson : require('./poisson'),
   chisquare : require('./chisquare'),
