@@ -181,6 +181,15 @@ describe('Distributions', function() {
 	assert.equal(distribution.mean, 5);
 	assert.equal(distribution.variance, 5);
   });
+  
+  it('Exponential sample', function () {
+	var distribution = distributions.exponential(3);
+    var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'exponential_3'));
+	assert.equal(distribution.mean, 1 / 3);
+	assert.equal(distribution.variance, 1 / 9);
+  });
 
   it('Bernoulli sample', function () {
     var distribution = distributions.bernoulli(0.8);

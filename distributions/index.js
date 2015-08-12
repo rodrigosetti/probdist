@@ -10,6 +10,7 @@ module.exports = {
   cauchy : require('./cauchy'),
   categorical : require('./categorical'),
   poisson : require('./poisson'),
+  exponential : require('./exponential'),
   chisquare : require('./chisquare'),
   beta : require('./beta'),
   pareto : require('./pareto'),

@@ -15,8 +15,10 @@ The following distributions are implemented:
  * Negative Binomial
  * Geometric
  * Gaussian
+ * Cauchy
  * Categorical
  * Poisson
+ * Exponential
  * Chi-squared
  * Beta
  * Pareto
