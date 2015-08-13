@@ -1,18 +1,16 @@
 
-var distribution = require('../helpers/distribution'),
-	gamma = require('./gamma');
+var distribution = require('../helpers/distribution');
 
 module.exports = function(lambda) {
-	return gamma(1, 1 / lambda);
-	// return distribution({
-		// pdf: function(x) {
-				// return x >= 0 ?
-				// lambda * Math.exp(-lambda * x) :
-				// 0;
-		// },
+	return distribution({
+		pdf: function(x) {
+				return x >= 0 ?
+				lambda * Math.exp(-lambda * x) :
+				0;
+		},
 		
-		// mean: 1 / lambda,
+		mean: 1 / lambda,
 		
-		// variance: 1 / (lambda * lambda)
-	// });
+		variance: 1 / (lambda * lambda)
+	});
 };
