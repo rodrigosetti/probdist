@@ -89,12 +89,21 @@ describe('Distributions', function() {
   });
   
   it('Discrete uniform sample', function () {
-	var distribution = distributions.discreteuniform(1, 20); 
+	var distribution = distributions.discreteuniform(1, 20);
 	var sample = distribution.sample(100);
 
     assert.ok(isDrawnFromDistribution(sample, 'discreteuniform_1_20'));
 	assert.equal(distribution.mean, 21 / 2);
 	assert.equal(distribution.variance, 399 / 12);
+  });
+  
+  it('Discrete uniform probability density function', function () {
+	 var distribution = distributions.discreteuniform(2); // defaults to 1, 2
+	 
+	 assert.equal(distribution.pdf[1], 0.5);
+	 assert.equal(distribution.pdf[2], 0.5);
+	 assert.equal(distribution.mean, 1.5);
+	 assert.equal(distribution.variance, 0.25);
   });
   
   it('Binomial sample', function () {
@@ -115,13 +124,51 @@ describe('Distributions', function() {
 	assert.equal(distribution.variance.toFixed(2), 1.25); 
   });
   
+  it('Negative binomial probability density function', function () {
+	var distribution = distributions.negativebinomial(4, 0.2);
+
+    assert.equal(distribution.pdf(0).toFixed(4), 0.4096);
+    assert.equal(distribution.pdf(0).toFixed(4), 0.4096);//test cache coverage
+    assert.equal(distribution.pdf(1).toFixed(5), 0.32768);
+    assert.equal(distribution.pdf(2).toFixed(5), 0.16384);
+    assert.equal(distribution.pdf(6).toFixed(8), 0.00220201);
+	assert.equal(distribution.pdf(1.5), 0);
+    assert.equal(distribution.pdf(-1), 0);
+  });
+  
+  it('Geometric sample', function () {
+	var distribution = distributions.geometric(0.2);
+    var sample = distribution.sample(100);
+
+    assert.ok(isDrawnFromDistribution(sample, 'geometric_.2'));
+	assert.equal(distribution.mean, 5);
+	assert.equal(distribution.variance.toFixed(0), 20); 
+  });
+  
   it('Shifted Geometric sample', function () {
 	var distribution = distributions.geometric(0.1, true);
     var sample = distribution.sample(100);
 
     assert.ok(isDrawnFromDistribution(sample, 'geometric_.1'));
 	assert.equal(distribution.mean, 9);
-	assert.equal(distribution.variance.toFixed(2), 90); 
+	assert.equal(distribution.variance.toFixed(0), 90); 
+  });
+  
+  it('Geometric(s) probability density function', function () {
+	var geo_2 = distributions.geometric(0.2);
+	
+	assert.equal(geo_2.pdf(0), 0);
+	assert.equal(geo_2.pdf(-1), 0);
+	assert.equal(geo_2.pdf(1).toFixed(1), 0.2);
+	assert.equal(geo_2.pdf(2).toFixed(2), 0.16);
+	assert.equal(geo_2.pdf(2.5), 0);
+	
+	var shifted_geo_2 = distributions.geometric(0.2, true);
+	assert.equal(shifted_geo_2.pdf(0), 0.2);
+	assert.equal(shifted_geo_2.pdf(-1), 0);
+	assert.equal(shifted_geo_2.pdf(1).toFixed(2), 0.16);
+	assert.equal(shifted_geo_2.pdf(2).toFixed(3), 0.128);
+	assert.equal(shifted_geo_2.pdf(2.5), 0);
   });
 
   it('Gaussian sample', function () {
@@ -198,6 +245,7 @@ describe('Distributions', function() {
 	var distribution = distributions.exponential(0.1),
 		threshold = 0.0001;
 
+	assert.ok(Math.abs(distribution.pdf(-1) - 0) < threshold);
 	assert.ok(Math.abs(distribution.pdf(0) - 0.1) < threshold);
 	assert.ok(Math.abs(distribution.pdf(1) - 0.09048374) < threshold);
     assert.ok(Math.abs(distribution.pdf(2) - 0.08187308) < threshold);
@@ -265,6 +313,18 @@ describe('Distributions', function() {
 	  assert.equal(distribution.mean, Number.POSITIVE_INFINITY);
 	  assert.equal(distribution.variance, undefined);
   });
+  
+  it('Pareto mean and variance', function () {
+	var distribution = distributions.pareto(3, 2);
+	
+	assert.equal(distribution.mean, 6);
+	assert.equal(distribution.variance, Number.POSITIVE_INFINITY);
+	
+	distribution = distributions.pareto(3, 3);
+	assert.equal(distribution.mean.toFixed(1), 4.5);
+	assert.equal(distribution.variance.toFixed(2), 6.75);
+	
+  });
 
   it('Gamma sample', function () {
       var distribution = distributions.gamma(4, 2);
@@ -298,6 +358,10 @@ describe('Distributions', function() {
       assert.ok(isDrawnFromDistribution(sample, 't_7'));
 	  assert.equal(distribution.mean, 0);
 	  assert.equal(distribution.variance, 1.4);
+	  
+	  distribution = distributions.t(2);
+	  assert.equal(distribution.mean, 0);
+	  assert.equal(distribution.variance, Math.POSITIVE_INFINITY);
   });
   
   it("Snedecor's F sample", function () {

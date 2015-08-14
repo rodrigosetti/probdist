@@ -3,9 +3,6 @@ var distribution = require('../helpers/distribution'),
 	factorial = require('../helpers/factorial');
 
 module.exports = function(n, p) {
-	if (n <= 1) {
-		return require('./bernoulli')(p);
-	}
 	var k,
 		pdf = {},
 		nfactorial = factorial(n);

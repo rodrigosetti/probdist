@@ -23,11 +23,13 @@ module.exports = function(r, p) {
 		
 	return distribution({
 		pdf: function(k) {
+			if (k !== parseInt(k) || k < 0) {
+				return 0;
+			}
 			if (k in cache) {
 				return cache[k];
 			} else {
-				k = Math.floor(k);
-				cache[k] = factorial(k + r - 1) / (factorial(k) * rm1factorial) *
+				cache[k] = (factorial(k + r - 1) / (factorial(k) * rm1factorial)) *
 							Math.pow(p, k) * Math.pow(1 - p, r);
 				return cache[k];
 			}
