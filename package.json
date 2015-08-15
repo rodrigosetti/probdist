@@ -18,6 +18,7 @@
     "distribution"
   ],
   "author": "Rodrigo Setti",
+  "contributors": [{"name": "Adam McCown", "url": "https://github.com/AdamMcCown"}],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rodrigosetti/probdist/issues"

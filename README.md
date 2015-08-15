@@ -9,16 +9,23 @@ Probability Distributions implementations in Javascript.
 The following distributions are implemented:
 
  * Uniform
+ * Discrete Uniform
  * Bernoulli
+ * Binomial
+ * Negative Binomial
+ * Geometric
  * Gaussian
+ * Cauchy
  * Categorical
  * Poisson
+ * Exponential
  * Chi-squared
  * Beta
  * Pareto
  * Gamma
  * Rayleigh
  * Student's T
+ * Snedecor's F
 
 Example of usage:
 
