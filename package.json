@@ -1,6 +1,6 @@
 {
   "name": "probdist",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Probability Distributions",
   "main": "index.js",
   "scripts": {

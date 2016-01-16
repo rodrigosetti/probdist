@@ -18,15 +18,18 @@ module.exports = function (min, max) {
     },
 
     sample: function (n) {
+      if (n === undefined) {
+        n = 1;
+      }
       var result = [];
       for (var i=0; i < n; i++) {
         result.push(min + (mt.rndHiRes() * interval));
       }
       return result;
     },
-	
-	mean: (min + max) / 2,
-	
-	variance: Math.pow(max - min, 2) / 12
+
+    mean: (min + max) / 2,
+
+    variance: Math.pow(max - min, 2) / 12
   };
 };
